@@ -1,46 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Nav } from './components/Nav';
 import { Menu } from './components/Menu';
+import { Dashboard } from './pages/Dashboard';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Users } from './pages/Users';
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <Nav />
-
       <div className="container-fluid">
         <div className="row">
           <Menu />
-
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-            <div className="table-responsive">
-              <table className="table table-striped table-sm">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>sit</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <Route path={''} exact component={Dashboard} />
+            <Route path={'/users'} component={Users} />
           </main>
         </div>
       </div>
-
+      </BrowserRouter>
     </div>
   );
 }
