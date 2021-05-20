@@ -1,9 +1,10 @@
-import React from 'react'
+import { VFC } from 'react'
+import { Wrapper } from '../components/Wrapper'
 
-export const Dashboard = () => {
+export const Dashboard: VFC = () => {
   return (
-    <div className="table-responsive">
+    <Wrapper>
       Dashboard
-    </div>
+    </Wrapper>
   )
 }
